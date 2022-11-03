@@ -1,10 +1,10 @@
+#Pre requisitos: R, y RStudio
+
 #Instalación de paquete
 install.packages(ggVennDiagram)
-
 cran_packages <- c("VennDiagram","colorfulVennPlot","gplots","venn",
                    "nVennR", "eulerr","venneuler","ggVennDiagram")
 xfun::pkg_load2(cran_packages)
-
 if (!requireNamespace("ggvenn")){
         remotes::install_github("yanlinlin82/ggvenn")
 }
@@ -19,7 +19,6 @@ x<-list(A=1:10, B=3:12, C= c(2L,3L,5L,8L,7L,9L,12L,13L,14L));x
 #Impresión de diagrama de Venn y Euler
 
 VennX <- ggVennDiagram(x[1:3]); VennX
-
 EulerX <-venn(x)
         plot(EulerX)
 
